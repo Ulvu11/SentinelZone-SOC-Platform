@@ -1,0 +1,8 @@
+.next/
+node_modules/
+.npm-cache/
+*.tsbuildinfo
+.env*.local
+qa/*.png
+qa/*.json
+qa/exported-report.md

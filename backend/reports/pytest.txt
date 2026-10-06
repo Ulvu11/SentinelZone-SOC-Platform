@@ -1,0 +1,135 @@
+No broken requirements found.
+
+contracts match runtime
+
+Portable heuristic secret scan passed (not a replacement for a full secret-scanner).
+
+{
+  "database": "temporary SQLite",
+  "live_connectors": "UNVERIFIED",
+  "health": {
+    "http_status": 200,
+    "status": "degraded",
+    "database": "healthy",
+    "connectors": {
+      "splunk": "not_configured",
+      "wazuh": "not_configured",
+      "cryptoguard": "not_configured"
+    },
+    "version": "0.28.0",
+    "time": "2026-10-06T07:13:22.045406+00:00"
+  },
+  "routes": {
+    "/api/overview": 404,
+    "/api/incidents": 404,
+    "/api/endpoints": 404,
+    "/v1/alerts": 401
+  },
+  "openapi": {
+    "matches_saved": true,
+    "paths": 36
+  },
+  "production_sqlite_startup": "REJECTED",
+  "status": "PASS"
+}
+
+
+/workspace/scratch/de78d70d2566/review-venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 0001, initial schema
+INFO  [alembic.runtime.migration] Running upgrade 0001 -> 0002, session_id confidence token_hash merge_requests
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 0002 -> 0003, Tenant/mode isolation, sensor health, immutable investigation snapshots.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.schemas
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.tables
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.types
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.constraints
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.defaults
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.comments
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade 0003 -> 0002, Tenant/mode isolation, sensor health, immutable investigation snapshots.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 0002 -> 0003, Tenant/mode isolation, sensor health, immutable investigation snapshots.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.schemas
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.tables
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.types
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.constraints
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.defaults
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.comments
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade 0003 -> 0002, Tenant/mode isolation, sensor health, immutable investigation snapshots.
+INFO  [alembic.runtime.migration] Running downgrade 0002 -> 0001, session_id confidence token_hash merge_requests
+INFO  [alembic.runtime.migration] Running downgrade 0001 -> , initial schema
+No new upgrade operations detected.
+No new upgrade operations detected.
+MIGRATION HEAD = 0003; populated upgrade/downgrade/upgrade, keys and schema parity PASS
+
+............s............................s.............................. [ 41%]
+........................................................................ [ 82%]
+..............................                                           [100%]
+=============================== warnings summary ===============================
+../../workspace/scratch/de78d70d2566/review-venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /workspace/scratch/de78d70d2566/review-venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] ../../workspace/scratch/de78d70d2566/fixed/SIEM-Backend-main/tests/test_boundary_regressions.py:87: requires PostgreSQL SKIP LOCKED
+SKIPPED [1] ../../workspace/scratch/de78d70d2566/fixed/SIEM-Backend-main/tests/test_extended.py:169: advisory lock is PostgreSQL-only
+172 passed, 2 skipped, 1 warning in 12.41s
+
+{
+  "database": "sqlite",
+  "counts": {
+    "passed": 172,
+    "failed": 0,
+    "skipped": 2
+  },
+  "categories": {
+    "DB": "PASS",
+    "MIGRATIONS": "PASS",
+    "API": "PASS",
+    "OPENAPI": "PASS",
+    "NORMALIZATION": "PASS",
+    "SURICATA DEDUP": "PASS",
+    "EXTERNAL REFS": "PASS",
+    "TENANT ISOLATION": "PASS",
+    "TEST/REAL": "PASS",
+    "REPLAY": "PASS",
+    "CASE PACK": "PASS",
+    "WHAT CHANGED": "PASS",
+    "INCIDENT ENGINE": "PASS",
+    "NOTIFICATIONS": "PASS",
+    "TELEMETRY HEALTH": "PASS",
+    "RBAC": "PASS",
+    "PRODUCTION CONFIG": "PASS",
+    "DEPENDENCIES": "PASS",
+    "CONTRACTS": "PASS",
+    "SECRETS": "PASS",
+    "RUNTIME HTTP": "PASS",
+    "MIGRATION PROBE": "PASS"
+  },
+  "postgresql_live_acceptance": "UNVERIFIED",
+  "skips": [
+    {
+      "test": "test_postgresql_outbox_skip_locked",
+      "reason": "requires PostgreSQL SKIP LOCKED"
+    },
+    {
+      "test": "test_ingest_lock_blocks_second_worker",
+      "reason": "advisory lock is PostgreSQL-only"
+    }
+  ]
+}

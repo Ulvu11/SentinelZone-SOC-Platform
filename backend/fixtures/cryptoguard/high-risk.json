@@ -1,0 +1,3 @@
+{"event_id": "CG-E-0002", "agent_id": "CG-001", "hostname": "WEB01", "ip": "10.10.20.10", "platform": "linux",
+ "security_risk": 85, "resource_impact": 85,
+ "reasons": ["unsigned_process", "sustained_compute", "outbound_connection"], "observed_at": "2026-10-04T12:30:00Z"}

@@ -1,0 +1,2 @@
+{"eventid": "cowrie.login.failed", "timestamp": "2026-10-04T12:10:00.000000Z", "session": "a1b2c3d4",
+ "sensor": "COWRIE01", "src_ip": "10.10.30.10", "username": "root", "password": "REDACTED-BY-DESIGN"}

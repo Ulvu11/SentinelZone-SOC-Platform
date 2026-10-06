@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@theme {
+  --color-soc-bg: #080d13;
+  --color-soc-panel: #0d141d;
+  --color-soc-panel-alt: #111a25;
+  --color-soc-surface: #151f2b;
+
+  --color-soc-line: #263241;
+  --color-soc-line-light: #303e4f;
+
+  --color-soc-text: #e6edf5;
+  --color-soc-muted: #8795a8;
+
+  --color-soc-accent: #3b82f6;
+  --color-soc-accent-bg: #102849;
+
+  --color-soc-good: #22c55e;
+  --color-soc-warn: #f59e0b;
+  --color-soc-danger: #ef4444;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #223246;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b5776;
+}
+
+@theme {
+  --color-soc-brand-border: #29496d;
+  --color-soc-brand-bg: #102849;
+  --color-soc-nav-hover: #152539;
+  --color-soc-accent: #72aaff;
+  --color-soc-danger: #fb7185;
+  --color-soc-muted: #9aabbe;
+}
+.app-content {
+  margin-left: 240px;
+}
+.is-collapsed .app-content {
+  margin-left: 68px;
+}
+main {
+  min-width: 0;
+}
+main > div,
+.grid > * {
+  min-width: 0;
+}
+:focus-visible {
+  outline: 2px solid #72aaff;
+  outline-offset: 3px;
+}
+a,
+button,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+select,
+summary {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+section[id] {
+  scroll-margin-top: 90px;
+}
+th {
+  white-space: nowrap;
+}
+td {
+  vertical-align: top;
+}
+.button,
+.control {
+  border: 1px solid #303e4f;
+  border-radius: 6px;
+  background: #151f2b;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.button:hover {
+  border-color: #72aaff;
+  background: #192b40;
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  color: #9aabbe;
+}
+.icon-button:hover {
+  background: #151f2b;
+  color: #e6edf5;
+}
+.badge {
+  display: inline-flex;
+  padding: 3px 7px;
+  border: 1px solid #303e4f;
+  border-radius: 4px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.link {
+  color: #72aaff;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.search-dialog {
+  margin: 12vh auto auto;
+  padding: 0;
+  width: min(640px, calc(100vw - 32px));
+  border: 1px solid #303e4f;
+  border-radius: 10px;
+  background: #0d141d;
+  color: #e6edf5;
+  box-shadow: 0 24px 80px #0009;
+}
+.search-dialog::backdrop {
+  background: #000a;
+}
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 80px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: #102849;
+}
+.skip-link:focus {
+  top: 8px;
+}
+@media (max-width: 1100px) {
+  .soc-sidebar {
+    width: 68px;
+  }
+  .soc-sidebar .sidebar-label {
+    display: none;
+  }
+  .soc-sidebar nav a {
+    justify-content: center;
+  }
+  .soc-sidebar > div:last-child {
+    display: none;
+  }
+  .app-content {
+    margin-left: 68px;
+  }
+}
+@media (max-width: 600px) {
+  .control {
+    max-width: 100%;
+  }
+  main {
+    padding: 12px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+[data-density="compact"] td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+@theme {
+  --color-soc-danger-bg: #381b28;
+  --color-soc-warn-bg: #34291a;
+  --color-soc-good-bg: #102c24;
+}
+
+.icon-button.text-soc-warn {
+  color: #f59e0b;
+}
+
+/* Only the Reports page changes for printing; other dashboard pages retain their layout. */
+@media print {
+  body:has(.soc-report-page) { background: white !important; color: #111 !important; }
+  body:has(.soc-report-page) .soc-sidebar,
+  body:has(.soc-report-page) .app-content > header,
+  body:has(.soc-report-page) .skip-link,
+  body:has(.soc-report-page) .report-controls { display: none !important; }
+  body:has(.soc-report-page) .app-content { margin-left: 0 !important; width: 100% !important; }
+  body:has(.soc-report-page) #main-content { padding: 0 !important; }
+  body:has(.soc-report-page) * { background: transparent !important; color: #111 !important; box-shadow: none !important; border-color: #ccc !important; }
+  .soc-report-page table { width: 100%; table-layout: fixed; font-size: 8pt; }
+  .soc-report-page td, .soc-report-page th { overflow-wrap: anywhere; padding: 4pt; }
+  .soc-report-page thead { display: table-header-group; }
+  .soc-report-page tr { break-inside: avoid; }
+  .soc-report-page h2, .soc-report-page h3 { break-after: avoid; }
+  .soc-report-page .report-table { overflow: visible !important; }
+  @page { size: A4 landscape; margin: 12mm; }
+}
+
+.soc-report > section > div:first-child { flex-wrap: wrap; gap: 1rem; }
+.soc-report > section > div:first-child > div:first-child { min-width: 0; overflow-wrap: anywhere; }

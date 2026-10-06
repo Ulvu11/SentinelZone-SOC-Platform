@@ -1,0 +1,16 @@
+[Unit]
+Description=SentinelZone backend: dispatch run
+After=postgresql.service
+
+[Service]
+Type=oneshot
+User=sentinelzone
+Group=sentinelzone
+WorkingDirectory=/opt/sentinelzone-backend
+EnvironmentFile=/etc/sentinelzone/backend.env
+ExecStart=/opt/sentinelzone-backend/.venv/bin/python -m app.cli dispatch
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077

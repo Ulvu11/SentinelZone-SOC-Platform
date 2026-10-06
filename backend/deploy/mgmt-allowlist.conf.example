@@ -1,0 +1,4 @@
+# Replace the example CIDR with YOUR management/VPN network before enabling.
+# allow YOUR_MGMT_CIDR;
+# allow YOUR_VPN_CIDR;
+deny all;

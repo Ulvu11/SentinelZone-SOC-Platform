@@ -1,0 +1,28 @@
+{
+  "database": "temporary SQLite",
+  "live_connectors": "UNVERIFIED",
+  "health": {
+    "http_status": 200,
+    "status": "degraded",
+    "database": "healthy",
+    "connectors": {
+      "splunk": "not_configured",
+      "wazuh": "not_configured",
+      "cryptoguard": "not_configured"
+    },
+    "version": "0.28.0",
+    "time": "2026-10-06T07:13:22.045406+00:00"
+  },
+  "routes": {
+    "/api/overview": 404,
+    "/api/incidents": 404,
+    "/api/endpoints": 404,
+    "/v1/alerts": 401
+  },
+  "openapi": {
+    "matches_saved": true,
+    "paths": 36
+  },
+  "production_sqlite_startup": "REJECTED",
+  "status": "PASS"
+}

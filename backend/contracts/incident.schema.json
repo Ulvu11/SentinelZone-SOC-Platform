@@ -1,0 +1,161 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "tenant_id": {
+      "title": "Tenant Id",
+      "type": "string"
+    },
+    "execution_mode": {
+      "default": "REAL",
+      "enum": [
+        "REAL",
+        "TEST"
+      ],
+      "title": "Execution Mode",
+      "type": "string"
+    },
+    "summary": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Summary"
+    },
+    "disposition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Disposition"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "rule_id": {
+      "default": "asset-correlation",
+      "title": "Rule Id",
+      "type": "string"
+    },
+    "rule_version": {
+      "default": "1",
+      "title": "Rule Version",
+      "type": "string"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "priority": {
+      "title": "Priority",
+      "type": "string"
+    },
+    "owner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Owner"
+    },
+    "version": {
+      "title": "Version",
+      "type": "integer"
+    },
+    "opened_at": {
+      "format": "date-time",
+      "title": "Opened At",
+      "type": "string"
+    },
+    "last_seen": {
+      "format": "date-time",
+      "title": "Last Seen",
+      "type": "string"
+    },
+    "host_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Host Id"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "reason_codes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reason Codes",
+      "type": "array"
+    },
+    "original_sensors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Original Sensors",
+      "type": "array"
+    },
+    "event_count": {
+      "title": "Event Count",
+      "type": "integer"
+    },
+    "confidence": {
+      "default": 0,
+      "title": "Confidence",
+      "type": "integer"
+    },
+    "merged_into": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Merged Into"
+    }
+  },
+  "required": [
+    "id",
+    "tenant_id",
+    "updated_at",
+    "status",
+    "priority",
+    "owner",
+    "version",
+    "opened_at",
+    "last_seen",
+    "host_id",
+    "title",
+    "reason_codes",
+    "original_sensors",
+    "event_count"
+  ],
+  "title": "IncidentOut",
+  "type": "object"
+}

@@ -1,0 +1,212 @@
+{
+  "description": "SentinelZone normalized event (see contracts/normalized-event.schema.json).\n\nNotes: event_time (when it happened) != received_at (when we got it);\nagent_ip (monitored endpoint) != src_ip (network traffic origin);\noriginal_sensor (who observed) != collector_path (who forwarded it).",
+  "properties": {
+    "tenant_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tenant Id"
+    },
+    "execution_mode": {
+      "default": "REAL",
+      "enum": [
+        "REAL",
+        "TEST",
+        "REPLAY"
+      ],
+      "title": "Execution Mode",
+      "type": "string"
+    },
+    "event_uid": {
+      "title": "Event Uid",
+      "type": "string"
+    },
+    "event_time": {
+      "format": "date-time",
+      "title": "Event Time",
+      "type": "string"
+    },
+    "received_at": {
+      "format": "date-time",
+      "title": "Received At",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "original_sensor": {
+      "title": "Original Sensor",
+      "type": "string"
+    },
+    "collector_path": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Collector Path",
+      "type": "array"
+    },
+    "event_type": {
+      "title": "Event Type",
+      "type": "string"
+    },
+    "host_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Host Id"
+    },
+    "agent_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Agent Id"
+    },
+    "agent_ip": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Agent Ip"
+    },
+    "src_ip": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Src Ip"
+    },
+    "dst_ip": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Dst Ip"
+    },
+    "dst_port": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Dst Port"
+    },
+    "original_severity": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Original Severity"
+    },
+    "severity_system": {
+      "title": "Severity System",
+      "type": "string"
+    },
+    "normalized_priority": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "title": "Normalized Priority",
+      "type": "string"
+    },
+    "is_test": {
+      "default": false,
+      "title": "Is Test",
+      "type": "boolean"
+    },
+    "evidence_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Evidence Ref"
+    },
+    "summary": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Summary"
+    },
+    "session_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Session Id"
+    }
+  },
+  "required": [
+    "event_uid",
+    "event_time",
+    "received_at",
+    "source",
+    "original_sensor",
+    "event_type",
+    "severity_system",
+    "normalized_priority"
+  ],
+  "title": "NormalizedEvent",
+  "type": "object"
+}

@@ -1,0 +1,45 @@
+[
+ {
+  "sourcetype": "wazuh:alerts",
+  "_raw": {
+   "id": "1759580940.2002",
+   "timestamp": "2026-10-04T12:29:00.000+0000",
+   "rule": {
+    "level": 10,
+    "description": "Suspicious process spawned from web server"
+   },
+   "agent": {
+    "id": "002",
+    "name": "WEB01",
+    "ip": "10.10.20.10"
+   }
+  }
+ },
+ {
+  "sourcetype": "cowrie:json",
+  "_raw": {
+   "eventid": "cowrie.login.failed",
+   "timestamp": "2026-10-04T12:11:00.000000Z",
+   "session": "e5f6a7b8",
+   "sensor": "COWRIE01",
+   "src_ip": "10.10.30.10",
+   "username": "admin"
+  }
+ },
+ {
+  "sourcetype": "suricata:eve",
+  "_raw": {
+   "timestamp": "2026-10-04T12:28:00.000000+0000",
+   "flow_id": 1122334455,
+   "event_type": "alert",
+   "src_ip": "10.10.30.10",
+   "dest_ip": "10.10.20.10",
+   "dest_port": 443,
+   "alert": {
+    "signature_id": 2010937,
+    "signature": "ET SCAN Nmap Scripting Engine User-Agent Detected",
+    "severity": 1
+   }
+  }
+ }
+]

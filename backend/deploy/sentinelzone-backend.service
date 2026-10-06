@@ -1,0 +1,25 @@
+[Unit]
+Description=SentinelZone Backend (FastAPI)
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sentinelzone
+Group=sentinelzone
+WorkingDirectory=/opt/sentinelzone-backend
+# Secrets live OUTSIDE the repo, readable only by root and the service user (chmod 640)
+EnvironmentFile=/etc/sentinelzone/backend.env
+# One process on purpose: scheduler/outbox are safe with several, but a single worker is the tested reference setup.
+ExecStart=/opt/sentinelzone-backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8003
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target

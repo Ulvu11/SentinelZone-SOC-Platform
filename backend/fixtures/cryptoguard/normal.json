@@ -1,0 +1,2 @@
+{"event_id": "CG-E-0001", "agent_id": "CG-003", "hostname": "CLIENT01", "ip": "10.10.10.20", "platform": "windows",
+ "security_risk": 12, "resource_impact": 20, "reasons": [], "observed_at": "2026-10-04T12:21:00Z"}

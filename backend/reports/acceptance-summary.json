@@ -1,0 +1,43 @@
+{
+  "database": "sqlite",
+  "counts": {
+    "passed": 172,
+    "failed": 0,
+    "skipped": 2
+  },
+  "categories": {
+    "DB": "PASS",
+    "MIGRATIONS": "PASS",
+    "API": "PASS",
+    "OPENAPI": "PASS",
+    "NORMALIZATION": "PASS",
+    "SURICATA DEDUP": "PASS",
+    "EXTERNAL REFS": "PASS",
+    "TENANT ISOLATION": "PASS",
+    "TEST/REAL": "PASS",
+    "REPLAY": "PASS",
+    "CASE PACK": "PASS",
+    "WHAT CHANGED": "PASS",
+    "INCIDENT ENGINE": "PASS",
+    "NOTIFICATIONS": "PASS",
+    "TELEMETRY HEALTH": "PASS",
+    "RBAC": "PASS",
+    "PRODUCTION CONFIG": "PASS",
+    "DEPENDENCIES": "PASS",
+    "CONTRACTS": "PASS",
+    "SECRETS": "PASS",
+    "RUNTIME HTTP": "PASS",
+    "MIGRATION PROBE": "PASS"
+  },
+  "postgresql_live_acceptance": "UNVERIFIED",
+  "skips": [
+    {
+      "test": "test_postgresql_outbox_skip_locked",
+      "reason": "requires PostgreSQL SKIP LOCKED"
+    },
+    {
+      "test": "test_ingest_lock_blocks_second_worker",
+      "reason": "advisory lock is PostgreSQL-only"
+    }
+  ]
+}
